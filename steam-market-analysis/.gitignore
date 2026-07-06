@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+
+images/dashboard.html
+
+data/games_processed.csv
+data/games_march2025_cleaned.csv
