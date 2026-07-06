@@ -76,7 +76,6 @@ The interactive dashboard contains:
 - NumPy
 - Matplotlib
 - Plotly
-- Jupyter Notebook
 - VS Code
 
 ---
@@ -95,8 +94,6 @@ ai-job-analysis/
 │   ├── executive_dashboard.png
 │   ├── executive_dashboard.html
 │   └── ...
-│
-├── notebooks/
 │
 ├── src/
 │   ├── main.py

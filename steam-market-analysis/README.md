@@ -65,8 +65,8 @@ steam-market-analysis/
 │   └── games_march2025_cleaned.csv
 ├── src/
 ├── images/
-├── README.md
-└── requirements.txt
+├── insight.md
+└── README.md
 ```
 
 > **Note:** The dataset is not included in this repository because of its size and licensing. Please download it directly from Kaggle before running the project.
@@ -95,15 +95,12 @@ steam-market-analysis/
 │
 ├── images/
 │
-├── notebooks/
-│
 ├── src/
 │   ├── main.py
 │   ├── eda.py
 │   └── dashboard.py
 │
 ├── insights.md
-├── requirements.txt
 └── README.md
 ```
 
