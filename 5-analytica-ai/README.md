@@ -85,7 +85,7 @@ Analytica AI evaluates dataset quality by detecting:
 * Invalid data types
 
 <p align="center">
-  <img src="screenshots/cleaning.png" width="100%" alt="Analytica AI Menu">
+  <img src="screenshots/cleaning.png" width="100%" alt="Analytica AI dataset cleaning">
 </p>
 
 This provides an immediate understanding of whether the dataset is suitable for further analysis.
@@ -130,7 +130,7 @@ Supported visualizations include:
 </p>
 
 <p align="center">
-  <img src="screenshots/top_platform.png" width="100%" alt="Analytica AI Menu">
+  <img src="screenshots/top_platform.png" width="100%" alt="Analytica AI top platform">
 </p>
 
 All visualizations are interactive through Plotly.
@@ -163,7 +163,7 @@ Examples include:
 * Statistical findings
 
 <p align="center">
-  <img src="screenshots/ai_insights.png" width="100%" alt="Analytica AI Menu">
+  <img src="screenshots/ai_insights.png" width="100%" alt="Analytica AI Insights">
 </p>
 
 The objective is to reduce the manual effort required during exploratory data analysis.
@@ -331,7 +331,7 @@ Analytica AI helps transform raw datasets into actionable information by:
 * Automating repetitive analytics workflows
 
 <p align="center">
-  <img src="screenshots/exports.png" width="100%" alt="Analytica AI Menu">
+  <img src="screenshots/exports.png" width="100%" alt="Analytica AI Exports">
 </p>
 
 ---
