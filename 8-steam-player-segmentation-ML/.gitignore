@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+
+models/kmeans.pkl
+models/pca.pkl
+models/scaler.pkl
+data/games.csv
+results/steam_game_clusters.csv
