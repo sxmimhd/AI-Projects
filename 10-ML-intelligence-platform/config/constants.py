@@ -1,0 +1,14 @@
+
+APP_NAME = "ML Intelligence Platform"
+
+APP_VERSION = "1.0.0"
+
+SUPPORTED_FILE_TYPES = [".csv"]
+
+CLASSIFICATION = "classification"
+REGRESSION = "regression"
+
+GOOD_DATASET_SCORE = 80
+AVERAGE_DATASET_SCORE = 60
+
+DEFAULT_ENCODING = "utf-8"
