@@ -5,7 +5,7 @@
 ---
 
 <p align="center">
-  <img src="screenshots/model_comparison.png" width="90%">
+  <img src="screenshots/baseline_models.png" width="90%">
 </p>
 
 ---
@@ -124,7 +124,7 @@ Model Persistence
 ## Model Comparison
 
 <p align="center">
-<img src="screenshots/model_comparison.png" width="90%">
+<img src="screenshots/baseline_models.png" width="90%">
 </p>
 
 Four classification algorithms were compared:
@@ -145,6 +145,20 @@ Gradient Boosting achieved the strongest overall performance.
 </p>
 
 5-Fold Stratified Cross Validation was used to estimate model generalization performance before optimization.
+
+---
+
+## Baseline vs Tuned Model
+
+<p align="center">
+<img src="screenshots/tuned_vs_baseline.png" width="90%">
+</p>
+
+The best baseline model was compared against its optimized version after hyperparameter tuning.
+
+This comparison highlights how optimization affects overall model performance across multiple evaluation metrics, including Accuracy, Precision, Recall, F1 Score, and ROC-AUC.
+
+Although the improvements were modest, the tuned model achieved better generalization while demonstrating a professional machine learning workflow centered on validation and optimization rather than relying solely on default model parameters.
 
 ---
 
@@ -248,16 +262,6 @@ Prediction errors were investigated by analyzing:
 - Misclassified customers
 
 This provides deeper insight into model behavior beyond simple accuracy metrics.
-
----
-
-## ROC Curve
-
-<p align="center">
-<img src="screenshots/roc_curve.png" width="90%">
-</p>
-
-ROC curves were used to compare classifier discrimination ability using the Area Under the Curve (ROC-AUC).
 
 ---
 
