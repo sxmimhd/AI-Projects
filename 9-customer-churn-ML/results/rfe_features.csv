@@ -1,0 +1,46 @@
+Feature,Selected,Ranking
+num__tenure,True,1
+num__MonthlyCharges,True,1
+num__TotalCharges,True,1
+cat__InternetService_DSL,True,1
+cat__MultipleLines_No,True,1
+cat__OnlineSecurity_No internet service,True,1
+cat__TechSupport_No internet service,True,1
+cat__StreamingTV_No internet service,True,1
+cat__DeviceProtection_No internet service,True,1
+cat__StreamingTV_No,True,1
+cat__TechSupport_Yes,True,1
+cat__OnlineBackup_No internet service,True,1
+cat__OnlineSecurity_Yes,True,1
+cat__InternetService_Fiber optic,True,1
+cat__InternetService_No,True,1
+cat__StreamingMovies_No,True,1
+cat__Contract_Month-to-month,True,1
+cat__Contract_Two year,True,1
+cat__StreamingMovies_No internet service,True,1
+cat__PaymentMethod_Electronic check,True,1
+cat__PaperlessBilling_No,False,2
+cat__Dependents_Yes,False,3
+cat__PhoneService_Yes,False,4
+cat__OnlineBackup_Yes,False,5
+cat__Partner_Yes,False,6
+cat__Partner_No,False,7
+cat__OnlineSecurity_No,False,8
+cat__Contract_One year,False,9
+cat__TechSupport_No,False,10
+cat__gender_Male,False,11
+cat__gender_Female,False,12
+cat__PaymentMethod_Bank transfer (automatic),False,13
+cat__PaymentMethod_Credit card (automatic),False,14
+cat__PaymentMethod_Mailed check,False,15
+cat__StreamingTV_Yes,False,16
+cat__StreamingMovies_Yes,False,17
+cat__MultipleLines_No phone service,False,18
+cat__PhoneService_No,False,19
+cat__MultipleLines_Yes,False,20
+cat__DeviceProtection_No,False,21
+num__SeniorCitizen,False,22
+cat__OnlineBackup_No,False,23
+cat__Dependents_No,False,24
+cat__DeviceProtection_Yes,False,25
+cat__PaperlessBilling_Yes,False,26

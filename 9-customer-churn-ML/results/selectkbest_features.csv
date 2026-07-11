@@ -1,0 +1,21 @@
+Feature,Score
+cat__Contract_Month-to-month,0.09919346443728516
+num__tenure,0.07006635940847605
+cat__Contract_Two year,0.06968470847112118
+cat__OnlineSecurity_No,0.05367520404748749
+cat__TechSupport_No,0.053046040163906794
+num__MonthlyCharges,0.04857126513548704
+num__TotalCharges,0.04544192407225078
+cat__InternetService_Fiber optic,0.04220047411860617
+cat__OnlineSecurity_No internet service,0.04182878607578355
+cat__DeviceProtection_No internet service,0.04168589665285283
+cat__PaymentMethod_Electronic check,0.0381314925927676
+cat__StreamingMovies_No internet service,0.03245562481545439
+cat__OnlineBackup_No,0.03128808382006576
+cat__OnlineBackup_No internet service,0.02649365548132665
+cat__DeviceProtection_No,0.026328630133893416
+cat__PaperlessBilling_Yes,0.02345326806587722
+cat__InternetService_No,0.02342879299694678
+cat__StreamingTV_No internet service,0.0224954466571734
+cat__TechSupport_No internet service,0.021794734009164207
+cat__Contract_One year,0.021385564748053643
