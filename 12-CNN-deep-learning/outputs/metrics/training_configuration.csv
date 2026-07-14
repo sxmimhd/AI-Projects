@@ -1,0 +1,10 @@
+Hyperparameter,Value
+Image Size,150
+Classes,6
+Batch Size,32
+Learning Rate,0.0005
+Epochs,30
+Optimizer,Adam
+Loss Function,CrossEntropyLoss
+Scheduler,ReduceLROnPlateau
+Early Stopping,7
