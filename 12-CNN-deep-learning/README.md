@@ -200,12 +200,6 @@ The architecture combines:
 
 # ⚙ Training Configuration
 
-<p align="center">
-<img src="outputs/figures/training_configuration.png" width="80%">
-</p>
-
-Hyperparameters are also exported as:
-
 ```
 outputs/metrics/training_configuration.csv
 ```
