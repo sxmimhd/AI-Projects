@@ -1,0 +1,6 @@
+Stage,Output
+Original,Simply Incredible. I enjoy this game a lot in short bursts. 10/10
+Clean,simply incredible enjoy game lot short bursts 1010
+Tokens,"['simply', 'incredible', 'enjoy', 'game', 'lot', 'short', 'bursts', '1010']"
+Encoded,"[242, 1029, 141, 2, 46, 128, 6152, 140]"
+Padded,"[242, 1029, 141, 2, 46, 128, 6152, 140, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"

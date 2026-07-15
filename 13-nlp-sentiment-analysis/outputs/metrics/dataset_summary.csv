@@ -1,0 +1,7 @@
+Property,Value
+Training Samples,64000
+Validation Samples,16000
+Testing Samples,20000
+Vocabulary Size,20000
+Maximum Sequence Length,100
+Batch Size,64
