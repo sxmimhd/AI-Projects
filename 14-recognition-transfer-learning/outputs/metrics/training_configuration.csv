@@ -1,0 +1,12 @@
+Hyperparameter,Value
+Model,ResNet50
+Transfer Learning,ImageNet
+Frozen Layers,All Backbone
+Image Size,224
+Classes,10
+Batch Size,32
+Learning Rate,0.001
+Epochs,20
+Optimizer,Adam
+Loss Function,CrossEntropyLoss
+Scheduler,ReduceLROnPlateau

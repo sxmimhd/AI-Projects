@@ -1,0 +1,4 @@
+Metric,Value
+Best Validation Loss,0.015547746632054963
+Best Validation Accuracy,0.995345744680851
+Fine-Tuning Epochs,8.0

@@ -1,0 +1,7 @@
+Property,Value
+Training Images,7000
+Validation Images,1500
+Testing Images,1500
+Classes,10
+Batch Size,32
+Image Size,224

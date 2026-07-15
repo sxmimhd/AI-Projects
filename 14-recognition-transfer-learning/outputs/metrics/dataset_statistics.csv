@@ -1,0 +1,7 @@
+Metric,Value
+Total Images,10000
+Training Images,7000
+Validation Images,1500
+Testing Images,1500
+Number of Classes,10
+Images per Class,1000
