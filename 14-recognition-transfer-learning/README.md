@@ -1,4 +1,4 @@
-# 🎮 Video Game Cover Recognition with Transfer Learning
+# 🎮 Video Game Recognition with Transfer Learning
 
 <p align="center">
     <img src="outputs/embeddings/tsne_embeddings.png" width="900">
@@ -20,7 +20,7 @@
 
 This project demonstrates how modern computer vision systems are built using **Transfer Learning**.
 
-Instead of training a convolutional neural network from scratch, a pretrained **ResNet50** model is adapted and fine-tuned to recognize video game covers from ten different game franchises.
+Instead of training a convolutional neural network from scratch, a pretrained **ResNet50** model is adapted and fine-tuned to recognize video game images from ten different game franchises.
 
 The project follows an end-to-end deep learning workflow including:
 
@@ -41,7 +41,7 @@ Unlike traditional CNN projects, this implementation leverages pretrained ImageN
 
 Digital game stores such as Steam, Epic Games Store, Xbox Store and PlayStation Store contain millions of game assets.
 
-Automatically recognizing game cover artwork enables:
+Automatically recognizing game images artwork enables:
 
 - Automatic game identification
 - Visual search engines
