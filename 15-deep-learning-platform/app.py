@@ -6,6 +6,13 @@ from src.dataset.validator import DatasetValidator
 from src.dataset.analyzer import DatasetAnalyzer
 from src.tasks.detector import TaskDetector
 from src.models.model_selector import ModelSelector
+from src.models.factory import ModelFactory
+from src.preprocessing.image_preprocessor import ImagePreprocessor
+from src.preprocessing.text_preprocessor import TextPreprocessor
+from src.dataset.builder import DatasetBuilder
+from src.models.summary import ModelSummary
+from src.training.trainer import Trainer
+
 
 def main():
 
@@ -61,7 +68,36 @@ def main():
     selector = ModelSelector(
     task["task"]
     )
-    model = selector.select()
+    model_name = selector.select()
+
+    if loader.dataset_type == "vision":
+        preprocessor = ImagePreprocessor()
+    else:
+        preprocessor = TextPreprocessor()
+    pipeline = preprocessor.build()
+
+    if loader.dataset_type == "vision":
+        builder = DatasetBuilder(
+            "data/games",
+            pipeline
+        )
+        dataloaders = builder.build()
+
+    model = ModelFactory.create(
+        model_name,
+        len(dataloaders["classes"])
+    )
+
+    ModelSummary.save(model)
+
+    trainer = Trainer(
+    model,
+    dataloaders["train"],
+    dataloaders["validation"]
+    )
+    trainer.train()
+
+
 
 
 if __name__ == "__main__":
