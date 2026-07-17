@@ -115,9 +115,19 @@ class Trainer:
 
                 )
 
-        self.save_history()
+        history_df = pd.DataFrame(self.history)
+
+        history_df.to_csv(
+
+            settings.HISTORY_DIR / "training_history.csv",
+
+            index=False
+
+        )
 
         Logger.success("Training completed.")
+
+        return history_df
 
     def train_epoch(self):
 
@@ -215,18 +225,6 @@ class Trainer:
 
         )
     
-    def save_history(self):
 
-        pd.DataFrame(
 
-            self.history
-
-        ).to_csv(
-
-            settings.HISTORY_DIR /
-
-            "training_history.csv",
-
-            index=False
-
-        )
+    

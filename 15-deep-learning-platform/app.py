@@ -12,7 +12,13 @@ from src.preprocessing.text_preprocessor import TextPreprocessor
 from src.dataset.builder import DatasetBuilder
 from src.models.summary import ModelSummary
 from src.training.trainer import Trainer
-
+from src.training.evaluator import Evaluator
+from src.training.plots import TrainingPlots
+from src.persistence.loader import ModelLoader
+from src.prediction.predictor import Predictor
+from src.persistence.saver import ModelSaver
+from src.visualization.predictions import PredictionPlots
+from src.explainability.gradcam import GradCAM
 
 def main():
 
@@ -95,9 +101,53 @@ def main():
     dataloaders["train"],
     dataloaders["validation"]
     )
-    trainer.train()
+    history = trainer.train()
+    TrainingPlots.history(history)
 
+    config = {
+        "model": model.__class__.__name__,
+        "image_size": settings.IMAGE_SIZE,
+        "batch_size": settings.BATCH_SIZE,
+        "learning_rate": settings.LEARNING_RATE,
+        "epochs": settings.EPOCHS,
+        "classes": len(
+            dataloaders["classes"]
+        )
+    }
 
+    ModelSaver.save(
+        model,
+        dataloaders["classes"],
+        config
+    )
+
+    package = ModelLoader.load(model)
+    model = package["model"]
+
+    evaluator = Evaluator(
+    model,
+    dataloaders["test"],
+    dataloaders["classes"]
+    )
+    results = evaluator.evaluate()
+
+    TrainingPlots.confusion_matrix(
+        results["confusion_matrix"],
+        dataloaders["classes"]
+    )
+
+    predictor = Predictor(
+        model,
+        dataloaders["transforms"]["validation"],
+        dataloaders["classes"]
+    )
+
+    prediction = predictor.predict(
+        "data/games/Minecraft/image_24.png"
+    #    explain=True
+    )
+
+    PredictionPlots.confidence()
 
 
 if __name__ == "__main__":
