@@ -19,6 +19,8 @@ from src.prediction.predictor import Predictor
 from src.persistence.saver import ModelSaver
 from src.visualization.predictions import PredictionPlots
 from src.explainability.gradcam import GradCAM
+from src.preprocessing.tokenizer import Tokenizer
+from src.dataset.text_builder import TextDatasetBuilder
 
 def main():
 
@@ -32,7 +34,7 @@ def main():
 
     loader = DatasetLoader(
 
-        "data/games"
+        "data/reviews/dataset.csv"
 
     )
 
@@ -78,21 +80,70 @@ def main():
 
     if loader.dataset_type == "vision":
         preprocessor = ImagePreprocessor()
-    else:
-        preprocessor = TextPreprocessor()
-    pipeline = preprocessor.build()
-
-    if loader.dataset_type == "vision":
+        pipeline = preprocessor.build()
         builder = DatasetBuilder(
-            "data/games",
+            "data/reviews/dataset.csv",
             pipeline
         )
         dataloaders = builder.build()
 
-    model = ModelFactory.create(
-        model_name,
-        len(dataloaders["classes"])
-    )
+    else:
+        preprocessor = TextPreprocessor()
+        clean_function = preprocessor.build()
+        text_column = loader.text_column
+        target_column = loader.target_column
+
+        dataset = dataset.dropna(
+            subset=[text_column, target_column]
+        )
+
+        dataset[text_column] = dataset[text_column].astype(str)
+
+        dataset[text_column] = dataset[text_column].apply(
+            clean_function
+        )
+
+        tokenizer = Tokenizer(
+            max_length=settings.MAX_SEQUENCE_LENGTH
+        )
+        tokenizer.fit(
+            dataset[text_column]
+        )
+
+        builder = TextDatasetBuilder(
+            dataframe=dataset,
+            tokenizer=tokenizer,
+            text_column=text_column,
+            target_column=target_column
+            
+        )
+
+        dataset[target_column] = dataset[target_column].astype("category").cat.codes
+
+        classes = dataset[target_column].nunique()
+        if classes != 2:
+            raise ValueError(
+                "Current SentimentClassifier supports binary classification only."
+            )
+        
+        dataloaders = builder.build()
+        
+
+    if loader.dataset_type == "vision":
+
+        model = ModelFactory.create(
+            model_name,
+            num_classes=len(
+                dataloaders["classes"]
+            )
+        )
+
+    else:
+        model = ModelFactory.create(
+            model_name,
+            vocabulary_size=
+            tokenizer.vocabulary_size
+        )
 
     ModelSummary.save(model)
 
@@ -105,49 +156,69 @@ def main():
     TrainingPlots.history(history)
 
     config = {
+
         "model": model.__class__.__name__,
-        "image_size": settings.IMAGE_SIZE,
         "batch_size": settings.BATCH_SIZE,
         "learning_rate": settings.LEARNING_RATE,
-        "epochs": settings.EPOCHS,
-        "classes": len(
-            dataloaders["classes"]
-        )
+        "epochs": settings.EPOCHS
     }
 
-    ModelSaver.save(
-        model,
-        dataloaders["classes"],
-        config
-    )
+    if loader.dataset_type == "vision":
+        config["image_size"] = settings.IMAGE_SIZE
+        config["classes"] = len(
+            dataloaders["classes"]
+        )
+    else:
+        config["vocabulary_size"] = tokenizer.vocabulary_size
+        config["sequence_length"] = settings.MAX_SEQUENCE_LENGTH
+
+
+    if loader.dataset_type == "vision":
+        ModelSaver.save(
+            model,
+            dataloaders["classes"],
+            config
+        )
+    else:
+        ModelSaver.save(
+            model,
+            tokenizer.vocabulary,
+            config
+        )
 
     package = ModelLoader.load(model)
     model = package["model"]
 
-    evaluator = Evaluator(
-    model,
-    dataloaders["test"],
-    dataloaders["classes"]
-    )
+
+    if loader.dataset_type == "vision":
+        evaluator = Evaluator(
+            model,
+            dataloaders["test"],
+            dataloaders["classes"]
+        )
+    else:
+        evaluator = Evaluator(
+            model,
+            dataloaders["test"]
+        )
     results = evaluator.evaluate()
 
-    TrainingPlots.confusion_matrix(
-        results["confusion_matrix"],
-        dataloaders["classes"]
-    )
 
-    predictor = Predictor(
-        model,
-        dataloaders["transforms"]["validation"],
-        dataloaders["classes"]
-    )
+    if loader.dataset_type == "vision":
+        TrainingPlots.confusion_matrix(
+            results["confusion_matrix"],
+            dataloaders["classes"]
+        )
 
-    prediction = predictor.predict(
-        "data/games/Minecraft/image_24.png"
-    #    explain=True
-    )
-
-    PredictionPlots.confidence()
+        predictor = Predictor(
+            model,
+            dataloaders["transforms"]["validation"],
+            dataloaders["classes"]
+        )
+        predictor.predict(
+            "data/games/Minecraft/image_24.png"
+        )
+        PredictionPlots.confidence()
 
 
 if __name__ == "__main__":

@@ -12,7 +12,10 @@ class TextPreprocessor:
 
     def clean(self, text):
 
-        text = text.lower()
+        if text is None:
+            return ""
+
+        text = str(text).lower()
 
         text = re.sub(r"http\S+", "", text)
 
@@ -31,4 +34,4 @@ class TextPreprocessor:
             "Text preprocessing pipeline created."
         )
 
-        return self
+        return self.clean

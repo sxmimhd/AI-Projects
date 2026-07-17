@@ -73,9 +73,15 @@ class DatasetLoader:
     def load_text_dataset(self):
 
         df = pd.read_csv(self.dataset_path)
+        Logger.info("Available Columns:")
+
+        for i, column in enumerate(df.columns, start=1):
+            print(f"{i}. {column}")
 
         Logger.info(f"Dataset Shape : {df.shape}")
-
+        text_choice = int(input("\nSelect text column: "))
+        target_choice = int(input("Select target column: "))
         self.dataset = df
-
+        self.text_column = df.columns[text_choice - 1]
+        self.target_column = df.columns[target_choice - 1]
         return df

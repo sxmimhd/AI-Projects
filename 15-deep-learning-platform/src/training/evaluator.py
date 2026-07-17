@@ -21,7 +21,7 @@ class Evaluator:
 
         test_loader,
 
-        class_names
+        class_names=None
 
     ):
 
@@ -30,6 +30,14 @@ class Evaluator:
         self.test_loader = test_loader
 
         self.class_names = class_names
+
+        self.binary = (
+
+            model.__class__.__name__
+
+            == "SentimentNetwork"
+
+        )
 
 
     def evaluate(self):
@@ -55,49 +63,79 @@ class Evaluator:
 
                 outputs = self.model(images)
 
-                probs = torch.softmax(
+                if self.binary:
 
-                    outputs,
+                    probs = torch.sigmoid(outputs)
 
-                    dim=1
+                    preds = (
 
-                )
+                        probs > 0.5
 
-                preds = probs.argmax(dim=1)
+                    ).long()
 
-                top5 = outputs.topk(
+                    predictions.extend(
 
-                    5,
+                        preds.cpu().numpy().flatten()
 
-                    dim=1
+                    )
 
-                ).indices
+                    labels.extend(
 
-                top5_correct += (
+                        targets.cpu().numpy()
 
-                    top5 == targets.unsqueeze(1)
+                    )
 
-                ).any(dim=1).sum().item()
+                    probabilities.extend(
+
+                        probs.cpu().numpy().flatten()
+
+                    )
+
+                else:
+
+                    probs = torch.softmax(
+
+                        outputs,
+
+                        dim=1
+
+                    )
+
+                    preds = probs.argmax(dim=1)
+
+                    top5 = outputs.topk(
+
+                        5,
+
+                        dim=1
+
+                    ).indices
+
+                    top5_correct += (
+
+                        top5 == targets.unsqueeze(1)
+
+                    ).any(dim=1).sum().item()
+
+                    predictions.extend(
+
+                        preds.cpu().numpy()
+
+                    )
+
+                    labels.extend(
+
+                        targets.cpu().numpy()
+
+                    )
+
+                    probabilities.extend(
+
+                        probs.max(dim=1)[0].cpu().numpy()
+
+                    )
 
                 total += targets.size(0)
-
-                predictions.extend(
-
-                    preds.cpu().numpy()
-
-                )
-
-                labels.extend(
-
-                    targets.cpu().numpy()
-
-                )
-
-                probabilities.extend(
-
-                    probs.max(dim=1)[0].cpu().numpy()
-
-                )
 
         accuracy = accuracy_score(
 
@@ -107,19 +145,39 @@ class Evaluator:
 
         )
 
-        top5_accuracy = top5_correct / total
+        if self.binary:
 
-        report = classification_report(
+            top5_accuracy = None
 
-            labels,
+        else:
 
-            predictions,
+            top5_accuracy = top5_correct / total
 
-            target_names=self.class_names,
+        if self.binary:
 
-            output_dict=True
+            report = classification_report(
 
-        )
+                labels,
+
+                predictions,
+
+                output_dict=True
+
+            )
+
+        else:
+
+            report = classification_report(
+
+                labels,
+
+                predictions,
+
+                target_names=self.class_names,
+
+                output_dict=True
+
+            )
 
         report_df = pd.DataFrame(report).transpose()
 
@@ -153,11 +211,23 @@ class Evaluator:
 
         Logger.success("Evaluation completed.")
 
-        Logger.info(
+        if self.binary:
 
-            f"Test Accuracy : {accuracy:.4f} | Top-5 Accuracy : {top5_accuracy:.4f}"
+            Logger.info(
 
-        )
+                f"Test Accuracy : {accuracy:.4f}"
+
+            )
+
+        else:
+
+            Logger.info(
+
+                f"Test Accuracy : {accuracy:.4f} | "
+
+                f"Top-5 Accuracy : {top5_accuracy:.4f}"
+
+            )
 
         metrics = pd.DataFrame({
 

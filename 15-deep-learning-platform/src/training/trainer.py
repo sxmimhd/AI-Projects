@@ -53,7 +53,17 @@ class Trainer:
 
         )
 
-        self.loss_function = torch.nn.CrossEntropyLoss()
+        if model.__class__.__name__ == "SentimentNetwork":
+
+            self.loss_function = torch.nn.BCEWithLogitsLoss()
+
+            self.binary = True
+
+        else:
+
+            self.loss_function = torch.nn.CrossEntropyLoss()
+
+            self.binary = False
 
         self.history = []
 
@@ -149,21 +159,53 @@ class Trainer:
 
             outputs = self.model(images)
 
-            loss = self.loss_function(
+            if self.binary:
 
-                outputs,
+                labels = labels.float().unsqueeze(1)
 
-                labels
+                loss = self.loss_function(
 
-            )
+                    outputs,
+
+                    labels
+
+                )
+
+                predictions = (
+
+                    torch.sigmoid(outputs) > 0.5
+
+                ).float()
+
+                correct += (
+
+                    predictions == labels
+
+                ).sum().item()
+
+            else:
+
+                loss = self.loss_function(
+
+                    outputs,
+
+                    labels
+
+                )
+
+                predictions = outputs.argmax(dim=1)
+
+                correct += (
+
+                    predictions == labels
+
+                ).sum().item()
 
             loss.backward()
 
             self.optimizer.step()
 
             running_loss += loss.item()
-
-            predictions = outputs.argmax(dim=1)
 
             correct += (predictions == labels).sum().item()
 
@@ -197,17 +239,49 @@ class Trainer:
 
                 outputs = self.model(images)
 
-                loss = self.loss_function(
+                if self.binary:
 
-                    outputs,
+                    labels = labels.float().unsqueeze(1)
 
-                    labels
+                    loss = self.loss_function(
 
-                )
+                        outputs,
+
+                        labels
+
+                    )
+
+                    predictions = (
+
+                        torch.sigmoid(outputs) > 0.5
+
+                    ).float()
+
+                    correct += (
+
+                        predictions == labels
+
+                    ).sum().item()
+
+                else:
+
+                    loss = self.loss_function(
+
+                        outputs,
+
+                        labels
+
+                    )
+
+                    predictions = outputs.argmax(dim=1)
+
+                    correct += (
+
+                        predictions == labels
+
+                    ).sum().item()
 
                 running_loss += loss.item()
-
-                predictions = outputs.argmax(dim=1)
 
                 correct += (
 
