@@ -134,3 +134,41 @@ class Predictor:
         )
 
         return dataframe
+    
+    def predict_text(self, sentence):
+
+        self.model.eval()
+
+        tokens = self.transform.encode(sentence)
+
+        tensor = torch.tensor(
+            tokens
+        ).unsqueeze(0).to(settings.DEVICE)
+
+        with torch.no_grad():
+
+            output = self.model(tensor)
+
+            probability = torch.sigmoid(output)
+
+            confidence = probability.item()
+
+        prediction = int(confidence >= 0.5)
+
+        result = {
+
+            "sentence": sentence,
+
+            "prediction": prediction,
+
+            "confidence": confidence
+
+        }
+
+        Logger.success("Prediction completed.")
+
+        Logger.info(
+            f"Prediction : {prediction} | Confidence : {confidence:.4f}"
+        )
+
+        return result

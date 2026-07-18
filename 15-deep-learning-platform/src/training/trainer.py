@@ -207,8 +207,6 @@ class Trainer:
 
             running_loss += loss.item()
 
-            correct += (predictions == labels).sum().item()
-
             total += labels.size(0)
 
         return (
@@ -282,12 +280,6 @@ class Trainer:
                     ).sum().item()
 
                 running_loss += loss.item()
-
-                correct += (
-
-                    predictions == labels
-
-                ).sum().item()
 
                 total += labels.size(0)
 
