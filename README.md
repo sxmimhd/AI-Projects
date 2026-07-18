@@ -1,187 +1,315 @@
-# 🤖 AI, Machine Learning & Data Analytics Portfolio
+# 🤖 AI Engineering Portfolio
 
-A collection of end-to-end projects covering **Data Analytics, Machine Learning, Business Intelligence, and AI application development**.
+Production-style AI projects covering **Data Analytics**, **Machine Learning**, **Deep Learning**, **Computer Vision**, **Natural Language Processing**, and **AI Platform Development**.
 
-The portfolio demonstrates complete workflows—from raw data and exploratory analysis to predictive modeling, model optimization, and production-style Python applications.
+Over the course of this portfolio, I designed and built **15 end-to-end AI projects**, progressing from business analytics to production-ready intelligent systems using **Python**, **Scikit-learn**, and **PyTorch**.
 
 ---
 
-# 🚀 Projects
+# 📌 Portfolio Highlights
 
-## 📊 Data Analytics
+- ✅ 15 End-to-End AI Projects
+- ✅ Production-Style Python Applications
+- ✅ Data Analytics → Machine Learning → Deep Learning
+- ✅ Computer Vision & Natural Language Processing
+- ✅ Reusable AI Frameworks
+- ✅ Explainable AI (XAI)
+- ✅ Transfer Learning
+- ✅ End-to-End Training Pipelines
 
-### 🎮 Steam Market Analysis
-Exploratory analysis of **89,000+ Steam games** with feature engineering, interactive visualizations, and market insights.
+---
+
+# 📊 Data Analytics
+
+## 🎮 Steam Market Analysis
+**Exploratory analysis of 89,000+ Steam games.**
 
 **Highlights**
+
 - Data Cleaning & EDA
 - Feature Engineering
 - Interactive Dashboards
 - Business Intelligence
 
-**Tech:** Python • Pandas • NumPy • Plotly • Matplotlib
+**Stack:** Python • Pandas • NumPy • Plotly
 
 ---
 
-### 🤖 AI Job Market & Salary Analysis
-Global analysis of AI jobs, salaries, required skills, and hiring trends with an executive business dashboard.
+## 🤖 AI Job Market & Salary Analysis
+**Global AI hiring, salary, and skills intelligence.**
 
 **Highlights**
-- Salary Intelligence
-- Skill Analysis
+
+- Salary Analytics
+- Skills Analysis
+- Executive Dashboard
 - Career Trends
-- Executive Reporting
 
-**Tech:** Python • Pandas • Plotly
+**Stack:** Python • Pandas • Plotly
 
 ---
 
-### 🎮 Video Game Industry Intelligence
-Historical video game sales analysis with trend exploration and time-series business analytics.
+## 🎮 Video Game Industry Intelligence
+**Historical video game sales and market analytics.**
 
 **Highlights**
+
 - Time-Series Analysis
 - Market Share Analysis
 - Trend Detection
-- Business Reporting
+- Executive Reporting
 
-**Tech:** Python • Pandas • Plotly
+**Stack:** Python • Pandas • Plotly
 
 ---
 
-### 🎬 Netflix Recommendation Intelligence
-Business intelligence platform using SQL analytics and recommendation-oriented feature engineering.
+## 🎬 Netflix Recommendation Intelligence
+**SQL-powered recommendation analytics platform.**
 
 **Highlights**
+
 - Advanced SQL
 - SQLite Database Design
 - Recommendation Analytics
 - Feature Engineering
 
-**Tech:** Python • SQL • SQLite • Pandas • Plotly
+**Stack:** Python • SQL • SQLite • Pandas
 
 ---
 
-### 📈 Analytica AI
-A Streamlit application that automatically analyzes any CSV dataset and generates dashboards, statistical reports, and business insights.
+## 📈 Analytica AI
+**Automatic Business Intelligence Platform for CSV datasets.**
 
 **Highlights**
+
 - Automatic Data Profiling
 - Statistical Analysis
 - Interactive Dashboards
-- AI-Style Insight Generation
+- Business Insight Generation
 
-**Tech:** Python • Streamlit • Pandas • Plotly • SciPy
+**Stack:** Python • Streamlit • Plotly • SciPy
 
 ---
 
 # 🤖 Machine Learning
 
-### 🎮 Video Game Sales Prediction
-End-to-end regression pipeline for predicting global video game sales.
+## 🎮 Video Game Sales Prediction
+**Regression pipeline for structured tabular data.**
 
 **Highlights**
-- Regression
-- Pipelines
-- Model Comparison
-- Feature Importance
 
-**Tech:** Scikit-learn • Pandas • Joblib
+- Regression Models
+- Feature Engineering
+- Model Comparison
+- Performance Evaluation
+
+**Stack:** Python • Scikit-learn • Pandas
 
 ---
 
-### 🎯 Steam Review Success Prediction
-Binary classification pipeline for predicting whether a Steam game will receive positive reviews.
+## 🎯 Steam Review Success Prediction
+**Binary classification of Steam review success.**
 
 **Highlights**
+
 - Classification
-- ROC-AUC Analysis
-- Threshold Tuning
+- ROC-AUC Evaluation
+- Threshold Analysis
 - Model Explainability
 
-**Tech:** Scikit-learn • Pandas • Joblib
+**Stack:** Python • Scikit-learn
 
 ---
 
-### 🧩 Steam Player Segmentation
-Unsupervised learning project using clustering to identify hidden player and game segments.
+## 🧩 Steam Player Segmentation
+**Unsupervised learning using clustering techniques.**
 
 **Highlights**
+
 - K-Means
 - PCA
-- Cluster Analysis
+- Cluster Profiling
 - Business Segmentation
 
-**Tech:** Scikit-learn • Pandas • NumPy
+**Stack:** Python • Scikit-learn
 
 ---
 
-### 📉 Customer Churn Prediction
-Production-style machine learning workflow for churn prediction and model optimization.
+## 📉 Customer Churn Prediction
+**Production-style customer churn prediction pipeline.**
 
 **Highlights**
+
 - Cross Validation
-- Hyperparameter Tuning
+- Hyperparameter Optimization
 - Feature Selection
 - Explainable AI
 
-**Tech:** Scikit-learn • Pandas • Joblib
+**Stack:** Python • Scikit-learn • Joblib
 
 ---
 
-### 🧠 ML Intelligence Platform
-A modular Python application that automates end-to-end machine learning workflows for regression and classification problems.
+## 🧠 ML Intelligence Platform
+**Reusable Python framework for end-to-end Machine Learning workflows.**
 
 **Highlights**
-- Automatic Preprocessing
+
+- Automatic Dataset Validation
+- Intelligent Preprocessing
 - Model Training & Comparison
 - Hyperparameter Optimization
 - Explainability
-- Model Persistence
 - Report Generation
+- Model Persistence
 
-**Tech:** Python • Scikit-learn • Pandas • Joblib
+**Stack:** Python • Scikit-learn • Joblib
 
 ---
 
-# 🛠 Technical Skills
+# 🔥 Deep Learning
 
-**Languages**
+## 🎮 Video Game Sales Prediction with PyTorch
+**Multi-Layer Perceptron (MLP) for regression.**
+
+**Highlights**
+
+- Neural Networks
+- Backpropagation
+- Training Pipelines
+- Regression Analysis
+
+**Stack:** Python • PyTorch
+
+---
+
+## 🖼 Image Classification with CNNs
+**Computer Vision using Convolutional Neural Networks built from scratch.**
+
+**Highlights**
+
+- Custom CNN
+- Data Augmentation
+- Grad-CAM
+- Explainable AI
+
+**Stack:** Python • PyTorch • TorchVision
+
+---
+
+## 💬 Steam Review Sentiment Analysis
+**Natural Language Processing with Deep Learning.**
+
+**Highlights**
+
+- Word Embeddings
+- Text Classification
+- Sequence Processing
+- Prediction Explainability
+
+**Stack:** Python • PyTorch • NLTK
+
+---
+
+## 🎮 Video Game Recognition with Transfer Learning
+**Transfer Learning using ResNet50 for image recognition.**
+
+**Highlights**
+
+- Transfer Learning
+- Fine-Tuning
+- Grad-CAM
+- Representation Learning
+
+**Stack:** Python • PyTorch • TorchVision
+
+---
+
+## 🚀 Deep Learning Intelligence Platform
+**Reusable Deep Learning framework supporting Computer Vision and NLP workflows.**
+
+**Highlights**
+
+- Automatic Dataset Detection
+- Automatic Task Detection
+- CNN & Transfer Learning
+- NLP Pipeline
+- Training Automation
+- Model Evaluation
+- Prediction
+- Model Export
+
+**Stack:** Python • PyTorch
+
+---
+
+# 🛠 Core Technical Skills
+
+## Languages
+
 - Python
 - SQL
 
-**Data Analytics**
-- Pandas
-- NumPy
+---
+
+## Data Analytics
+
+- Data Cleaning
 - Exploratory Data Analysis (EDA)
 - Statistical Analysis
+- Feature Engineering
 - Data Visualization
 - Business Intelligence
-- Time-Series Analysis
 
-**Machine Learning**
-- Scikit-learn
+---
+
+## Machine Learning
+
 - Regression
 - Classification
 - Clustering
 - Feature Engineering
-- Pipelines
 - Cross Validation
 - Hyperparameter Optimization
 - Feature Selection
 - Explainable AI
 - Model Persistence
 
-**Tools**
+---
+
+## Deep Learning
+
+- PyTorch
+- Neural Networks
+- CNNs
+- Transfer Learning
+- Computer Vision
+- Natural Language Processing
+- Word Embeddings
+- Fine-Tuning
+- Grad-CAM
+
+---
+
+## Libraries & Tools
+
+- Scikit-learn
+- PyTorch
+- TorchVision
+- Pandas
+- NumPy
 - Plotly
 - Matplotlib
 - Streamlit
 - SQLite
-- Jupyter Notebook
 - Joblib
+- Jupyter Notebook
+- Git
+- GitHub
 
 ---
 
-# 🎯 Focus
+# 🎯 Current Focus
 
-I build AI and data-driven software that transforms raw data into actionable insights and predictive solutions. My work combines software engineering, analytics, and machine learning to deliver reusable tools, intelligent dashboards, and production-style ML applications.
+I build production-oriented AI systems that combine software engineering with modern Machine Learning and Deep Learning techniques.
+
+My work focuses on designing reusable AI frameworks, intelligent automation tools, explainable models, and end-to-end solutions for structured data, computer vision, and natural language processing.
