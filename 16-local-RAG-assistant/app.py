@@ -9,7 +9,7 @@ from src.preprocessing.cleaner import TextCleaner
 from src.preprocessing.document_builder import DocumentBuilder
 from src.utils.helpers import create_directories
 from src.utils.logger import Logger
-
+from src.retrieval.retriever import Retriever
 
 console = Console()
 logger = Logger.get_logger()
@@ -104,7 +104,22 @@ def main() -> None:
     console.print()
     display_document(documents[0])
 
-    logger.info("Phase 2 completed successfully.")
+
+    retriever = Retriever(documents)
+
+    results = retriever.retrieve(
+        "open world survival crafting"
+    )
+
+    console.print("\n[bold cyan]Semantic Search Test[/bold cyan]\n")
+
+    for rank, result in enumerate(results, start=1):
+
+        console.print(
+            f"{rank}. "
+            f"{result['document'].title} "
+            f"([green]{result['score']:.4f}[/green])"
+        )
 
 
 if __name__ == "__main__":

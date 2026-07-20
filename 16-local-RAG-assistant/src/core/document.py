@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+import numpy as np
 
 
 @dataclass(slots=True)
@@ -7,6 +8,7 @@ class Document:
     title: str
     document: str
     metadata: dict = field(default_factory=dict)
+    embedding: np.ndarray | None = None
 
     def to_dict(self) -> dict:
         return {

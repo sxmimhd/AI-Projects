@@ -50,6 +50,10 @@ class Settings:
 
     RANDOM_STATE = 42
 
+    EMBEDDING_BATCH_SIZE = 64
+    NORMALIZE_EMBEDDINGS = True
+    SHOW_PROGRESS_BAR = True
+
     LOG_FILE = LOGS_DIR / "project.log"
     LOG_LEVEL = "INFO"
 

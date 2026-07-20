@@ -2,3 +2,32 @@
 2026-07-20 15:56:38 | INFO     | Dataset loaded successfully (89,618 rows).
 2026-07-20 15:56:38 | INFO     | Dataset validation completed.
 2026-07-20 15:56:39 | INFO     | Phase 1 completed successfully.
+2026-07-20 16:38:49 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 16:38:57 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 16:38:57 | INFO     | Dataset validation completed.
+2026-07-20 16:39:06 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 16:39:22 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 16:39:22 | INFO     | Phase 2 completed successfully.
+2026-07-20 16:57:54 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 16:58:08 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 16:58:09 | INFO     | Dataset validation completed.
+2026-07-20 16:58:17 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 16:58:25 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 16:58:25 | INFO     | Loading embedding model on CUDA...
+2026-07-20 16:58:44 | INFO     | Embedding model loaded successfully.
+2026-07-20 17:02:26 | INFO     | Generated embeddings with shape (89421, 384).
+2026-07-20 17:02:26 | INFO     | Embeddings saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\embeddings.npy
+2026-07-20 17:02:26 | INFO     | Phase 3 completed successfully.
+2026-07-20 17:22:18 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 17:22:22 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 17:22:22 | INFO     | Dataset validation completed.
+2026-07-20 17:22:27 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 17:22:35 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 17:22:35 | INFO     | Loading embedding model on CUDA...
+2026-07-20 17:22:40 | INFO     | Embedding model loaded successfully.
+2026-07-20 17:25:42 | INFO     | Generated embeddings with shape (89421, 384).
+2026-07-20 17:25:42 | INFO     | Embeddings saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\embeddings.npy
+2026-07-20 17:25:44 | INFO     | Metadata saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\metadata.pkl
+2026-07-20 17:25:44 | INFO     | Phase 3 completed successfully.
+2026-07-20 17:25:44 | INFO     | FAISS index created with 89,421 vectors.
+2026-07-20 17:25:44 | INFO     | FAISS index saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\faiss.index
