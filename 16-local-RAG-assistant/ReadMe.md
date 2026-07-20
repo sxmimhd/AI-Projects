@@ -446,40 +446,6 @@ outputs/
 
 ---
 
-# 🚀 Installation
-
-Clone the repository
-
-```bash
-git clone <repository-url>
-```
-
-Create a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-Activate it
-
-```bash
-.venv\Scripts\activate
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the application
-
-```bash
-python app.py
-```
-
----
-
 # 💡 Example Query
 
 ```
@@ -490,9 +456,7 @@ The system retrieves the most semantically relevant Steam games before generatin
 
 ---
 
-# 📚 What I Learned
-
-Through this project I gained practical experience with
+# 📚 Project Experience
 
 * Semantic Search
 * Dense Vector Embeddings
