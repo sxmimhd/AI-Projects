@@ -1,9 +1,12 @@
 from rich.console import Console
+from rich.panel import Panel
 from rich.table import Table
 
 from config import settings
 from src.dataset.loader import DatasetLoader
 from src.dataset.validator import DatasetValidator
+from src.preprocessing.cleaner import TextCleaner
+from src.preprocessing.document_builder import DocumentBuilder
 from src.utils.helpers import create_directories
 from src.utils.logger import Logger
 
@@ -21,7 +24,7 @@ def display_dataset_info(loader: DatasetLoader) -> None:
     rows, columns = loader.get_shape()
 
     table.add_row("Rows", f"{rows:,}")
-    table.add_row("Columns", f"{columns}")
+    table.add_row("Columns", str(columns))
     table.add_row("Memory Usage", f"{loader.get_memory_usage():.2f} MB")
     table.add_row("Duplicate Rows", str(loader.get_duplicate_count()))
 
@@ -36,13 +39,38 @@ def display_validation_report(report: dict) -> None:
 
     table.add_row("Dataset Valid", str(report["valid"]))
     table.add_row("Total Games", f"{report['total_games']:,}")
-    table.add_row("Missing Columns", ", ".join(report["missing_columns"]) if report["missing_columns"] else "None")
+    table.add_row(
+        "Missing Columns",
+        ", ".join(report["missing_columns"]) if report["missing_columns"] else "None"
+    )
     table.add_row("Duplicate App IDs", str(report["duplicate_appids"]))
     table.add_row("Missing Titles", str(report["missing_titles"]))
     table.add_row("Missing Descriptions", str(report["missing_descriptions"]))
     table.add_row("Empty Descriptions", str(report["empty_descriptions"]))
 
     console.print(table)
+
+
+def display_document(document) -> None:
+    metadata = document.metadata
+
+    console.print(
+        Panel.fit(
+            f"[bold cyan]Game ID:[/bold cyan] {document.game_id}\n"
+            f"[bold cyan]Title:[/bold cyan] {document.title}\n\n"
+            f"[bold cyan]Genres:[/bold cyan] {', '.join(metadata['genres'])}\n"
+            f"[bold cyan]Developers:[/bold cyan] {', '.join(metadata['developers'])}\n"
+            f"[bold cyan]Publishers:[/bold cyan] {', '.join(metadata['publishers'])}\n"
+            f"[bold cyan]Price:[/bold cyan] ${metadata['price']}\n"
+            f"[bold cyan]Release Date:[/bold cyan] {metadata['release_date']}\n\n"
+            f"[bold cyan]Top Tags:[/bold cyan] "
+            f"{', '.join(metadata['tags'][:10])}\n\n"
+            f"[bold cyan]Document:[/bold cyan]\n\n"
+            f"{document.document[:1000]}...",
+            title="Sample Knowledge Document",
+            border_style="green",
+        )
+    )
 
 
 def main() -> None:
@@ -59,10 +87,24 @@ def main() -> None:
     display_dataset_info(loader)
     display_validation_report(report)
 
-    console.print("\n[bold cyan]Dataset Preview[/bold cyan]\n")
-    console.print(loader.preview())
+    cleaner = TextCleaner(dataframe)
+    cleaned_dataframe = cleaner.clean()
 
-    logger.info("Phase 1 completed successfully.")
+    console.print(
+        f"\n[bold green]Cleaned Dataset:[/bold green] {len(cleaned_dataframe):,} games"
+    )
+
+    builder = DocumentBuilder(cleaned_dataframe)
+    documents = builder.build()
+
+    console.print(
+        f"[bold green]Knowledge Documents:[/bold green] {len(documents):,}"
+    )
+
+    console.print()
+    display_document(documents[0])
+
+    logger.info("Phase 2 completed successfully.")
 
 
 if __name__ == "__main__":
