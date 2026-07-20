@@ -31,3 +31,105 @@
 2026-07-20 17:25:44 | INFO     | Phase 3 completed successfully.
 2026-07-20 17:25:44 | INFO     | FAISS index created with 89,421 vectors.
 2026-07-20 17:25:44 | INFO     | FAISS index saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\faiss.index
+2026-07-20 19:18:11 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 19:18:19 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 19:18:19 | INFO     | Dataset validation completed.
+2026-07-20 19:18:28 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 19:18:45 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 19:18:45 | INFO     | Loading embedding model on CUDA...
+2026-07-20 19:18:51 | INFO     | Embedding model loaded successfully.
+2026-07-20 19:18:51 | INFO     | Loading existing embeddings...
+2026-07-20 19:18:51 | INFO     | Loaded embeddings with shape (89421, 384)
+2026-07-20 19:18:51 | INFO     | Loading existing FAISS index...
+2026-07-20 19:18:52 | INFO     | Loaded FAISS index with 89,421 vectors.
+2026-07-20 19:18:53 | INFO     | Generating response using qwen2.5-coder:7b...
+2026-07-20 19:36:52 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 19:36:59 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 19:36:59 | INFO     | Dataset validation completed.
+2026-07-20 19:37:07 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 19:37:20 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 19:37:21 | INFO     | Loading embedding model on CUDA...
+2026-07-20 19:37:27 | INFO     | Embedding model loaded successfully.
+2026-07-20 19:37:27 | INFO     | Loading existing embeddings...
+2026-07-20 19:37:27 | INFO     | Loaded embeddings with shape (89421, 384)
+2026-07-20 19:37:27 | INFO     | Loading existing FAISS index...
+2026-07-20 19:37:27 | INFO     | Loaded FAISS index with 89,421 vectors.
+2026-07-20 19:37:29 | INFO     | Generating response using qwen2.5-coder:7b...
+2026-07-20 19:56:16 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 19:56:21 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 19:56:21 | INFO     | Dataset validation completed.
+2026-07-20 19:56:28 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 19:56:36 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 19:56:36 | INFO     | Loading embedding model on CUDA...
+2026-07-20 19:56:42 | INFO     | Embedding model loaded successfully.
+2026-07-20 19:56:42 | INFO     | Loading existing embeddings...
+2026-07-20 19:56:42 | INFO     | Loaded embeddings with shape (89421, 384)
+2026-07-20 19:56:42 | INFO     | Loading existing FAISS index...
+2026-07-20 19:56:42 | INFO     | Loaded FAISS index with 89,421 vectors.
+2026-07-20 19:56:43 | INFO     | Generating response using qwen2.5-coder:7b...
+2026-07-20 19:59:37 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 19:59:42 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 19:59:42 | INFO     | Dataset validation completed.
+2026-07-20 19:59:48 | INFO     | Text cleaning completed. Removed 197 invalid games.
+2026-07-20 19:59:57 | INFO     | Built 89,421 knowledge documents.
+2026-07-20 19:59:57 | INFO     | Loading embedding model on CUDA...
+2026-07-20 20:00:03 | INFO     | Embedding model loaded successfully.
+2026-07-20 20:00:03 | INFO     | Loading existing embeddings...
+2026-07-20 20:00:03 | INFO     | Loaded embeddings with shape (89421, 384)
+2026-07-20 20:00:03 | INFO     | Loading existing FAISS index...
+2026-07-20 20:00:03 | INFO     | Loaded FAISS index with 89,421 vectors.
+2026-07-20 20:00:04 | INFO     | Generating response using qwen2.5-coder:7b...
+2026-07-20 20:00:24 | INFO     | Saved figure: 01_dataset_statistics.png
+2026-07-20 20:00:24 | INFO     | Visualization 1 completed.
+2026-07-20 20:18:00 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 20:18:04 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 20:18:04 | INFO     | Dataset validation completed.
+2026-07-20 20:20:57 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 20:21:01 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 20:21:01 | INFO     | Dataset validation completed.
+2026-07-20 20:21:03 | INFO     | Text cleaning completed. Removed 69,350 invalid games.
+2026-07-20 20:21:05 | INFO     | Built 20,268 knowledge documents.
+2026-07-20 20:21:05 | INFO     | Loading embedding model on CUDA...
+2026-07-20 20:21:11 | INFO     | Embedding model loaded successfully.
+2026-07-20 20:21:11 | INFO     | Loading existing embeddings...
+2026-07-20 20:21:11 | INFO     | Loaded embeddings with shape (89421, 384)
+2026-07-20 20:21:11 | INFO     | Loading existing FAISS index...
+2026-07-20 20:21:11 | INFO     | Loaded FAISS index with 89,421 vectors.
+2026-07-20 20:22:35 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 20:22:39 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 20:22:39 | INFO     | Dataset validation completed.
+2026-07-20 20:22:41 | INFO     | Text cleaning completed. Removed 69,350 invalid games.
+2026-07-20 20:22:43 | INFO     | Built 20,268 knowledge documents.
+2026-07-20 20:22:43 | INFO     | Loading embedding model on CUDA...
+2026-07-20 20:22:48 | INFO     | Embedding model loaded successfully.
+2026-07-20 20:22:48 | INFO     | Generating embeddings...
+2026-07-20 20:23:29 | INFO     | Generated embeddings with shape (20268, 384).
+2026-07-20 20:23:29 | INFO     | Embeddings saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\embeddings.npy
+2026-07-20 20:23:29 | INFO     | Metadata saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\metadata.pkl
+2026-07-20 20:23:29 | INFO     | Building FAISS index...
+2026-07-20 20:23:29 | INFO     | FAISS index created with 20,268 vectors.
+2026-07-20 20:23:29 | INFO     | FAISS index saved to C:\Users\samym\Desktop\Projects\AI-Projects\16-local-RAG-assistant\models\faiss.index
+2026-07-20 20:23:30 | INFO     | Generating response using qwen2.5-coder:7b...
+2026-07-20 20:23:45 | INFO     | Saved figure: 01_dataset_statistics.png
+2026-07-20 20:23:46 | INFO     | Saved figure: 02_document_length_distribution.png
+2026-07-20 20:25:26 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 20:25:30 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 20:25:30 | INFO     | Dataset validation completed.
+2026-07-20 20:25:33 | INFO     | Text cleaning completed. Removed 69,350 invalid games.
+2026-07-20 20:25:35 | INFO     | Built 20,268 knowledge documents.
+2026-07-20 20:25:35 | INFO     | Loading embedding model on CUDA...
+2026-07-20 20:25:40 | INFO     | Embedding model loaded successfully.
+2026-07-20 20:25:40 | INFO     | Loading existing embeddings...
+2026-07-20 20:25:40 | INFO     | Loaded embeddings with shape (20268, 384)
+2026-07-20 20:25:40 | INFO     | Loading existing FAISS index...
+2026-07-20 20:25:40 | INFO     | Loaded FAISS index with 20,268 vectors.
+2026-07-20 20:25:40 | INFO     | Generating response using qwen2.5-coder:7b...
+2026-07-20 20:25:56 | INFO     | Saved figure: 01_dataset_statistics.png
+2026-07-20 20:25:57 | INFO     | Saved figure: 02_document_length_distribution.png
+2026-07-20 20:25:57 | INFO     | Saved figure: 04_pca_projection.png
+2026-07-20 20:26:03 | INFO     | Saved figure: 05_tsne_projection.png
+2026-07-20 20:26:04 | INFO     | Saved figure: 06_search_results.png
+2026-07-20 20:26:04 | INFO     | Saved figure: 07_similarity_heatmap.png
+2026-07-20 20:26:04 | INFO     | Saved figure: 08_explained_variance.png
+2026-07-20 20:26:05 | INFO     | Saved figure: 09_genre_distribution.png
+2026-07-20 20:26:05 | INFO     | All visualizations generated successfully

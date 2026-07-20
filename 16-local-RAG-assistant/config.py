@@ -34,7 +34,7 @@ class Settings:
     FAISS_INDEX_PATH = MODELS_DIR / "faiss.index"
     METADATA_PATH = MODELS_DIR / "metadata.pkl"
 
-    TOP_K_RESULTS = 5
+    TOP_K_RESULTS = 3
 
     LLM_MODEL = "qwen2.5:7b"
 
@@ -56,7 +56,7 @@ class Settings:
 
     OLLAMA_HOST = "http://localhost:11434"
     OLLAMA_MODEL = "qwen2.5-coder:7b"
-
+    MIN_REVIEWS = 100
     LOG_FILE = LOGS_DIR / "project.log"
     LOG_LEVEL = "INFO"
 

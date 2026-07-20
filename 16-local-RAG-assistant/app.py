@@ -10,6 +10,8 @@ from src.preprocessing.document_builder import DocumentBuilder
 from src.utils.helpers import create_directories
 from src.utils.logger import Logger
 from src.retrieval.retriever import Retriever
+from src.LLM.rag_pipeline import RAGPipeline
+from src.visualization.visualizer import EmbeddingVisualizer
 
 console = Console()
 logger = Logger.get_logger()
@@ -107,11 +109,13 @@ def main() -> None:
 
     retriever = Retriever(documents)
 
-    results = retriever.retrieve(
-        "open world survival crafting"
-    )
+    pipeline = RAGPipeline(retriever)
 
-    console.print("\n[bold cyan]Semantic Search Test[/bold cyan]\n")
+    question = "Recommend me best survival crafting open world games."
+
+    answer, results = pipeline.ask(question)
+
+    console.print("\n[bold cyan]Retrieved Documents[/bold cyan]\n")
 
     for rank, result in enumerate(results, start=1):
 
@@ -121,6 +125,21 @@ def main() -> None:
             f"([green]{result['score']:.4f}[/green])"
         )
 
+    console.print("\n[bold green]LLM Answer[/bold green]\n")
+
+    console.print(answer)
+
+    visualizer = EmbeddingVisualizer(cleaned_dataframe)
+    visualizer.dataset_statistics()
+    visualizer.document_length_distribution(documents)
+    visualizer.pca_projection(retriever.embeddings)
+    visualizer.tsne_projection(retriever.embeddings)
+    visualizer.search_results(results)
+    visualizer.similarity_heatmap(retriever.embeddings)
+    visualizer.explained_variance(retriever.embeddings)
+    visualizer.genre_distribution()
+
+    logger.info("All visualizations generated successfully")
 
 if __name__ == "__main__":
     main()

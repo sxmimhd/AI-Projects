@@ -1,8 +1,7 @@
 import html
 import re
-
 import pandas as pd
-
+from config import settings
 from src.utils.logger import Logger
 
 
@@ -18,7 +17,30 @@ class TextCleaner:
         self.df = self.df.drop_duplicates(subset="appid")
 
         self.df = self.df.dropna(subset=["name", "detailed_description"])
+        invalid_titles = [
+            "Untitled",
+            "Unknown",
+            "Coming Soon",
+            "Test"
+        ]
 
+        pattern = "|".join(invalid_titles)
+
+        self.df = self.df[
+            ~self.df["name"].str.contains(
+                pattern,
+                case=False,
+                na=False
+            )
+        ]
+
+        self.df = self.df[
+            self.df["num_reviews_total"] >= settings.MIN_REVIEWS
+        ]
+
+        self.df = self.df[
+            self.df["num_reviews_total"] >= 100
+        ]
         self.df["detailed_description"] = (
             self.df["detailed_description"]
             .astype(str)
