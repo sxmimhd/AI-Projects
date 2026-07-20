@@ -54,6 +54,9 @@ class Settings:
     NORMALIZE_EMBEDDINGS = True
     SHOW_PROGRESS_BAR = True
 
+    OLLAMA_HOST = "http://localhost:11434"
+    OLLAMA_MODEL = "qwen2.5-coder:7b"
+
     LOG_FILE = LOGS_DIR / "project.log"
     LOG_LEVEL = "INFO"
 
