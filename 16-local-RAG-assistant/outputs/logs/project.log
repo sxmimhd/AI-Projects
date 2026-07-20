@@ -1,0 +1,4 @@
+2026-07-20 15:56:30 | INFO     | Starting Local RAG Knowledge Assistant
+2026-07-20 15:56:38 | INFO     | Dataset loaded successfully (89,618 rows).
+2026-07-20 15:56:38 | INFO     | Dataset validation completed.
+2026-07-20 15:56:39 | INFO     | Phase 1 completed successfully.
