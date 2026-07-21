@@ -24,7 +24,7 @@ class Settings:
 
     MODEL_DIR = PROJECT_ROOT / "models"
 
-    OLLAMA_MODEL = "qwen2.5:7b"
+    OLLAMA_MODEL = "qwen2.5-coder:7b"
 
     MAX_ITERATIONS = 5
 
