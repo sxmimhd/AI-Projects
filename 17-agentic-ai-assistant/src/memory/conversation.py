@@ -1,17 +1,22 @@
 from collections import deque
+from src.memory.event import AgentEvent
 
 
 class ConversationMemory:
-    """
-    Stores the recent conversation between
-    the user and the assistant.
-    """
 
-    def __init__(self, max_messages: int = 10):
+    def __init__(
+        self,
+        max_messages: int = 10,
+        max_events: int = 10,
+    ):
 
         self.history = deque(maxlen=max_messages)
 
-    def add_user_message(self, message: str) -> None:
+        self.events = deque(maxlen=max_events)
+
+    # Chat Messages
+
+    def add_user_message(self, message: str):
 
         self.history.append(
             {
@@ -20,7 +25,7 @@ class ConversationMemory:
             }
         )
 
-    def add_assistant_message(self, message: str) -> None:
+    def add_assistant_message(self, message: str):
 
         self.history.append(
             {
@@ -29,10 +34,29 @@ class ConversationMemory:
             }
         )
 
-    def get_history(self) -> list[dict]:
+    def get_history(self):
 
         return list(self.history)
 
-    def clear(self) -> None:
+    # Agent Events
+
+    def add_event(self, event: AgentEvent):
+
+        self.events.append(event)
+
+    def get_events(self):
+
+        return list(self.events)
+
+    def latest_event(self):
+
+        if not self.events:
+            return None
+
+        return self.events[-1]
+
+    def clear(self):
 
         self.history.clear()
+
+        self.events.clear()
