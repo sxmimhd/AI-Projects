@@ -44,9 +44,6 @@ class PromptBuilder:
 
         6. Return ONLY valid JSON.
 
-        Conversation History
-
-        {conversation}
 
         Available Tools
 
@@ -55,4 +52,22 @@ class PromptBuilder:
         Current User Question
 
         {question}
+
+        Return a JSON object with exactly this structure:
+
+        {{
+            "tool": "calculator",
+            "arguments": {{
+                "expression": "2 + 2"
+            }},
+            "reason": "Why this tool was selected."
+        }}
+
+        Do not write explanations.
+        Do not use markdown.
+        Return JSON only.
+
+        Conversation History
+        
+            {conversation}
         """

@@ -10,6 +10,7 @@ from src.tools.registry import ToolRegistry
 from src.memory.conversation import ConversationMemory
 from src.agent.state import AgentState
 from src.memory.event import AgentEvent
+from src.reasoning.reasoning_engine import ReasoningEngine
 
 class Agent:
 
@@ -27,6 +28,12 @@ class Agent:
 
         self.memory = ConversationMemory()
 
+        self.reasoning = ReasoningEngine(
+            llm=self.llm,
+            executor=self.executor,
+            planner=self.planner,
+        )
+
     def display_tools(self) -> None:
 
         self.console.print("\n[bold magenta]Available Tools[/bold magenta]\n")
@@ -40,6 +47,7 @@ class Agent:
 
         # Create the execution state
         state = AgentState(question=question)
+        state.plan = self.planner.create_plan(question)
 
         # Save the user's message
         self.memory.add_user_message(state.question)
@@ -51,26 +59,20 @@ class Agent:
             history=self.memory.get_history(),
         )
 
-        # Ask the LLM to decide what to do
-        decision = self.llm.generate(prompt)
+        self.console.print()
+        
+        plan = self.planner.create_plan(question)
 
-        # Update the state with the LLM decision
-        state.current_thought = decision.reason
-        state.selected_tool = decision.tool
-        state.tool_arguments = decision.arguments
-        self.console.print("\n[bold yellow]Raw LLM Decision[/bold yellow]")
-        self.console.print(decision)
+        self.console.rule("[bold cyan]Execution Plan[/bold cyan]")
 
-        # Execute the selected tool
-        result = self.executor.execute(
-            tool_name=state.selected_tool,
-            **state.tool_arguments,
+        for index, step in enumerate(plan.steps, start=1):
+            self.console.print(f"{index}. {step}")
+            
+
+        result = self.reasoning.run_loop(
+            state,
+            prompt,
         )
-
-        # Update the state with the observation
-        state.observation = str(result["result"])
-        state.tool_calls.append(result)
-        state.iterations += 1
 
         # Save assistant response into memory
         self.memory.add_assistant_message(state.observation)
