@@ -2,9 +2,6 @@ from src.agent.state import AgentState
 
 
 class ReasoningEngine:
-    """
-    Handles the Think → Act → Observe cycle.
-    """
 
     def __init__(self, llm, executor, planner):
         self.llm = llm
@@ -12,22 +9,20 @@ class ReasoningEngine:
         self.planner = planner
 
     def think(self, prompt: str):
-        """
-        Ask the LLM what to do next.
-        """
         return self.llm.generate(prompt)
 
     def act(self, state: AgentState):
-        """
-        Execute the selected tool.
-        """
 
         result = self.executor.execute(
             tool_name=state.selected_tool,
             **state.tool_arguments,
         )
 
-        state.observation = str(result["result"])
+        if result["success"]:
+            state.observation = str(result["result"])
+        else:
+            state.observation = result["error"]
+
         state.tool_calls.append(result)
         state.iterations += 1
 
@@ -74,11 +69,22 @@ class ReasoningEngine:
 
         if decision.arguments is None:
             raise ValueError("Tool arguments cannot be None.")
+        
+        if decision.tool == "directory" and "path" not in decision.arguments:
+            decision.arguments["path"] = "."
 
-        if decision.tool == "calculator":
+        required_arguments = {
+            "calculator": ["expression"],
+            "file_reader": ["filepath"],
+            "system": [],
+            "directory": ["path"],
 
-            if "expression" not in decision.arguments:
+        }
 
+        required = required_arguments.get(decision.tool, [])
+
+        for argument in required:
+            if argument not in decision.arguments:
                 raise ValueError(
-                    f"Calculator requires 'expression'. Received: {decision.arguments}"
+                    f"{decision.tool} requires '{argument}'. Received: {decision.arguments}"
                 )

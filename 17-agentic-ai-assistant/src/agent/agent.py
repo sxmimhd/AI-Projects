@@ -6,6 +6,9 @@ from src.LLM.client import LLMClient
 from src.planner.planner import Planner
 from src.prompting.prompt_builder import PromptBuilder
 from src.tools.calculator import CalculatorTool
+from src.tools.file_reader import FileReaderTool
+from src.tools.system import SystemTool
+from src.tools.directory import DirectoryTool
 from src.tools.registry import ToolRegistry
 from src.memory.conversation import ConversationMemory
 from src.agent.state import AgentState
@@ -20,6 +23,9 @@ class Agent:
         # Tool Registry
         self.registry = ToolRegistry()
         self.registry.register(CalculatorTool())
+        self.registry.register(FileReaderTool())
+        self.registry.register(SystemTool())
+        self.registry.register(DirectoryTool())
 
         # Core Components
         self.executor = ToolExecutor(self.registry)
@@ -60,7 +66,7 @@ class Agent:
         )
 
         self.console.print()
-        
+
         plan = self.planner.create_plan(question)
 
         self.console.rule("[bold cyan]Execution Plan[/bold cyan]")

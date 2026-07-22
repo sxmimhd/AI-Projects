@@ -10,9 +10,6 @@ console = Console()
 
 
 def initialize_project() -> None:
-    """
-    Create all required project folders.
-    """
 
     create_directories(
         [

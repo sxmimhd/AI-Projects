@@ -22,52 +22,84 @@ class PromptBuilder:
 
         Your task is to choose the SINGLE best tool for solving the user's request.
 
-        Rules:
+        Rules
 
-        1. Read the ENTIRE conversation history.
-        2. The user may refer to previous answers using words like:
-        - it
-        - that
-        - previous result
-        - previous answer
-        - plus
-        - minus
-        - multiply it
-        - divide it
+        1. Read the conversation history before answering.
 
-        3. Resolve those references using the conversation history.
+        2. Use the conversation history ONLY if the current message refers to previous context (for example: it, that, previous result, previous answer).
 
-        4. If the user asks for a mathematical calculation,
-        always generate a complete mathematical expression.
+        3. If the current question is complete by itself, ignore previous conversation.
 
-        5. Never ask questions.
+        4. Choose the SINGLE most appropriate tool.
 
-        6. Return ONLY valid JSON.
+        5. Provide all required arguments for that tool.
+
+        6. Return valid JSON only.
+
+        7. Do not include markdown or code fences.
 
 
         Available Tools
 
         {tool_descriptions}
 
+        
+        Conversation History
+        
+            {conversation}
+
         Current User Question
 
         {question}
 
-        Return a JSON object with exactly this structure:
+        Return a JSON object with this structure:
+
+        Return ONLY one JSON object.
+
+        Example for Calculator:
 
         {{
             "tool": "calculator",
             "arguments": {{
-                "expression": "2 + 2"
+                "expression": "5 + 7"
             }},
-            "reason": "Why this tool was selected."
+            "reason": "The user requested a mathematical calculation."
         }}
 
-        Do not write explanations.
+        Example for File Reader:
+
+        {{
+            "tool": "file_reader",
+            "arguments": {{
+                "filepath": "README.md"
+            }},
+            "reason": "The user requested to read a file."
+        }}
+
+        Example for System Tool:
+
+        {{
+            "tool": "system",
+            "arguments": {{}},
+            "reason": "The user requested information about the current computer."
+        }}
+
+        If the user wants to inspect folders or list files,
+        use the directory tool.
+        {{
+            "tool": "directory",
+            "arguments": {{
+                "path": "."
+            }},
+            "reason": "..."
+        }}
+
         Do not use markdown.
+        Do not wrap the JSON in ```json.
         Return JSON only.
 
-        Conversation History
-        
-            {conversation}
+        The arguments object must contain all parameters required by the selected tool.
+
+        Do not write explanations.
+
         """
