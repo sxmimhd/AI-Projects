@@ -7,7 +7,7 @@ from src.preprocessing.image_preprocessor import ImagePreprocessor
 from src.prompting.prompt_builder import PromptBuilder, PromptType
 from src.utils.types import ImagePath
 from src.validation.image_validator import ImageValidator
-
+from src.reporting.report_generator import ReportGenerator
 
 class VisionAssistant:
 
@@ -17,6 +17,7 @@ class VisionAssistant:
         self.preprocessor = ImagePreprocessor()
         self.prompt_builder = PromptBuilder()
         self.client = OllamaClient()
+        self.report_generator = ReportGenerator()
 
     def analyze(
         self,
@@ -58,6 +59,14 @@ class VisionAssistant:
             response = self.client.generate(
                 image_path=temp_image,
                 prompt=prompt,
+            )
+
+            # reports
+            self.report_generator.save(
+                image_path=image_path,
+                prompt_type=prompt_type,
+                question=question or "",
+                response=response,
             )
 
             return response
