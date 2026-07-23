@@ -1,315 +1,256 @@
 # 🤖 AI Engineering Portfolio
 
-Production-style AI projects covering **Data Analytics**, **Machine Learning**, **Deep Learning**, **Computer Vision**, **Natural Language Processing**, and **AI Platform Development**.
+<p align="center">
 
-Over the course of this portfolio, I designed and built **15 end-to-end AI projects**, progressing from business analytics to production-ready intelligent systems using **Python**, **Scikit-learn**, and **PyTorch**.
+**A collection of open-source AI projects covering the complete AI Engineering journey—from Data Analytics and Machine Learning to Deep Learning, Retrieval-Augmented Generation (RAG), Agentic AI, Vision-Language Models, and AI-powered developer tools.**
 
----
+All projects are built from scratch for learning, experimentation, and portfolio purposes. Each repository includes its own detailed documentation explaining the architecture, implementation, concepts, and results.
 
-# 📌 Portfolio Highlights
-
-- ✅ 15 End-to-End AI Projects
-- ✅ Production-Style Python Applications
-- ✅ Data Analytics → Machine Learning → Deep Learning
-- ✅ Computer Vision & Natural Language Processing
-- ✅ Reusable AI Frameworks
-- ✅ Explainable AI (XAI)
-- ✅ Transfer Learning
-- ✅ End-to-End Training Pipelines
+</p>
 
 ---
 
-# 📊 Data Analytics
+# 📌 Portfolio at a Glance
 
-## 🎮 Steam Market Analysis
-**Exploratory analysis of 89,000+ Steam games.**
-
-**Highlights**
-
-- Data Cleaning & EDA
-- Feature Engineering
-- Interactive Dashboards
-- Business Intelligence
-
-**Stack:** Python • Pandas • NumPy • Plotly
+| Category | Projects |
+|----------|----------:|
+| 📊 Data Analytics | 5 |
+| 🤖 Machine Learning | 5 |
+| 🧠 Deep Learning | 5 |
+| ⚡ Generative AI & LLM Applications | 4 |
+| **Total Projects** | **19** |
 
 ---
 
-## 🤖 AI Job Market & Salary Analysis
-**Global AI hiring, salary, and skills intelligence.**
-
-**Highlights**
-
-- Salary Analytics
-- Skills Analysis
-- Executive Dashboard
-- Career Trends
-
-**Stack:** Python • Pandas • Plotly
-
----
-
-## 🎮 Video Game Industry Intelligence
-**Historical video game sales and market analytics.**
-
-**Highlights**
-
-- Time-Series Analysis
-- Market Share Analysis
-- Trend Detection
-- Executive Reporting
-
-**Stack:** Python • Pandas • Plotly
-
----
-
-## 🎬 Netflix Recommendation Intelligence
-**SQL-powered recommendation analytics platform.**
-
-**Highlights**
-
-- Advanced SQL
-- SQLite Database Design
-- Recommendation Analytics
-- Feature Engineering
-
-**Stack:** Python • SQL • SQLite • Pandas
-
----
-
-## 📈 Analytica AI
-**Automatic Business Intelligence Platform for CSV datasets.**
-
-**Highlights**
-
-- Automatic Data Profiling
-- Statistical Analysis
-- Interactive Dashboards
-- Business Insight Generation
-
-**Stack:** Python • Streamlit • Plotly • SciPy
-
----
-
-# 🤖 Machine Learning
-
-## 🎮 Video Game Sales Prediction
-**Regression pipeline for structured tabular data.**
-
-**Highlights**
-
-- Regression Models
-- Feature Engineering
-- Model Comparison
-- Performance Evaluation
-
-**Stack:** Python • Scikit-learn • Pandas
-
----
-
-## 🎯 Steam Review Success Prediction
-**Binary classification of Steam review success.**
-
-**Highlights**
-
-- Classification
-- ROC-AUC Evaluation
-- Threshold Analysis
-- Model Explainability
-
-**Stack:** Python • Scikit-learn
-
----
-
-## 🧩 Steam Player Segmentation
-**Unsupervised learning using clustering techniques.**
-
-**Highlights**
-
-- K-Means
-- PCA
-- Cluster Profiling
-- Business Segmentation
-
-**Stack:** Python • Scikit-learn
-
----
-
-## 📉 Customer Churn Prediction
-**Production-style customer churn prediction pipeline.**
-
-**Highlights**
-
-- Cross Validation
-- Hyperparameter Optimization
-- Feature Selection
-- Explainable AI
-
-**Stack:** Python • Scikit-learn • Joblib
-
----
-
-## 🧠 ML Intelligence Platform
-**Reusable Python framework for end-to-end Machine Learning workflows.**
-
-**Highlights**
-
-- Automatic Dataset Validation
-- Intelligent Preprocessing
-- Model Training & Comparison
-- Hyperparameter Optimization
-- Explainability
-- Report Generation
-- Model Persistence
-
-**Stack:** Python • Scikit-learn • Joblib
-
----
-
-# 🔥 Deep Learning
-
-## 🎮 Video Game Sales Prediction with PyTorch
-**Multi-Layer Perceptron (MLP) for regression.**
-
-**Highlights**
-
-- Neural Networks
-- Backpropagation
-- Training Pipelines
-- Regression Analysis
-
-**Stack:** Python • PyTorch
-
----
-
-## 🖼 Image Classification with CNNs
-**Computer Vision using Convolutional Neural Networks built from scratch.**
-
-**Highlights**
-
-- Custom CNN
-- Data Augmentation
-- Grad-CAM
-- Explainable AI
-
-**Stack:** Python • PyTorch • TorchVision
-
----
-
-## 💬 Steam Review Sentiment Analysis
-**Natural Language Processing with Deep Learning.**
-
-**Highlights**
-
-- Word Embeddings
-- Text Classification
-- Sequence Processing
-- Prediction Explainability
-
-**Stack:** Python • PyTorch • NLTK
-
----
-
-## 🎮 Video Game Recognition with Transfer Learning
-**Transfer Learning using ResNet50 for image recognition.**
-
-**Highlights**
-
+# 🎯 What You'll Find
+
+This portfolio demonstrates practical implementations of modern AI systems, including:
+
+- End-to-end AI workflows
+- Production-style Python applications
+- Data Analytics & Business Intelligence
+- Machine Learning pipelines
+- Deep Learning with PyTorch
+- Computer Vision
+- Natural Language Processing
 - Transfer Learning
-- Fine-Tuning
-- Grad-CAM
-- Representation Learning
-
-**Stack:** Python • PyTorch • TorchVision
-
----
-
-## 🚀 Deep Learning Intelligence Platform
-**Reusable Deep Learning framework supporting Computer Vision and NLP workflows.**
-
-**Highlights**
-
-- Automatic Dataset Detection
-- Automatic Task Detection
-- CNN & Transfer Learning
-- NLP Pipeline
-- Training Automation
-- Model Evaluation
-- Prediction
-- Model Export
-
-**Stack:** Python • PyTorch
+- Explainable AI (XAI)
+- Semantic Search
+- Vector Databases
+- Retrieval-Augmented Generation (RAG)
+- Agentic AI
+- AI Coding Assistants
+- Vision-Language Models
+- Modular AI Framework Design
 
 ---
 
-# 🛠 Core Technical Skills
+# 📚 Learning Roadmap
 
-## Languages
+The projects are organized as a progressive learning journey.
+
+| Phase | Focus |
+|--------|-------|
+| 📊 **1** | Data Analytics & Business Intelligence |
+| 🤖 **2** | Machine Learning |
+| 🧠 **3** | Deep Learning |
+| ⚡ **4** | Generative AI & Modern AI Systems |
+
+Each phase builds upon the previous one, gradually introducing more advanced concepts and real-world AI architectures.
+
+---
+
+# 🚀 Projects
+
+## 📊 Data Analytics
+
+| Project | Main Topics |
+|----------|-------------|
+| Steam Market Analysis | Data Cleaning, EDA, Dashboards |
+| AI Job Market & Salary Analysis | Business Intelligence, Visualization |
+| Video Game Industry Intelligence | Time-Series Analysis |
+| Netflix Recommendation Intelligence | SQL Analytics |
+| Analytica AI | Automated Data Analysis Platform |
+
+---
+
+## 🤖 Machine Learning
+
+| Project | Main Topics |
+|----------|-------------|
+| Video Game Sales Prediction | Regression |
+| Steam Review Success Prediction | Classification |
+| Steam Player Segmentation | Clustering |
+| Customer Churn Prediction | Model Optimization |
+| ML Intelligence Platform | Automated ML Framework |
+
+---
+
+## 🧠 Deep Learning
+
+| Project | Main Topics |
+|----------|-------------|
+| Video Game Sales Prediction | Neural Networks (MLP) |
+| Image Classification | CNNs & Computer Vision |
+| Steam Review Sentiment Analysis | NLP & Word Embeddings |
+| Video Game Recognition | Transfer Learning (ResNet50) |
+| Deep Learning Intelligence Platform | Modular DL Framework |
+
+---
+
+## ⚡ Generative AI & Modern AI
+
+| Project | Main Topics |
+|----------|-------------|
+| Local RAG Knowledge Assistant | Semantic Search, Embeddings, FAISS, RAG |
+| Agentic AI Assistant | Planning, Tool Calling, Memory |
+| Local AI Coding Assistant | Code RAG, AST Parsing, Repository Understanding |
+| Vision AI Assistant | Vision-Language Models, OCR, Visual Question Answering |
+
+---
+
+# 🧩 Technologies
+
+### Programming
 
 - Python
 - SQL
 
----
+### Data
 
-## Data Analytics
-
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Statistical Analysis
-- Feature Engineering
-- Data Visualization
-- Business Intelligence
-
----
-
-## Machine Learning
-
-- Regression
-- Classification
-- Clustering
-- Feature Engineering
-- Cross Validation
-- Hyperparameter Optimization
-- Feature Selection
-- Explainable AI
-- Model Persistence
-
----
-
-## Deep Learning
-
-- PyTorch
-- Neural Networks
-- CNNs
-- Transfer Learning
-- Computer Vision
-- Natural Language Processing
-- Word Embeddings
-- Fine-Tuning
-- Grad-CAM
-
----
-
-## Libraries & Tools
-
-- Scikit-learn
-- PyTorch
-- TorchVision
 - Pandas
 - NumPy
 - Plotly
 - Matplotlib
-- Streamlit
-- SQLite
+- SciPy
+
+### Machine Learning
+
+- Scikit-learn
 - Joblib
-- Jupyter Notebook
+
+### Deep Learning
+
+- PyTorch
+- TorchVision
+- NLTK
+
+### Generative AI
+
+- Ollama
+- Qwen
+- Qwen-VL
+- Qwen-Coder
+- Sentence Transformers
+- Transformers
+- FAISS
+
+### Software Engineering
+
 - Git
 - GitHub
+- Jupyter Notebook
+- Streamlit
+- SQLite
+- Rich
+
+---
+
+# 🧠 AI Topics Covered
+
+This portfolio explores a wide range of modern AI concepts, including:
+
+### Data Analytics
+
+- Data Cleaning
+- Exploratory Data Analysis
+- Feature Engineering
+- Statistical Analysis
+- Business Intelligence
+- Data Visualization
+
+### Machine Learning
+
+- Regression
+- Classification
+- Clustering
+- Cross Validation
+- Hyperparameter Optimization
+- Feature Selection
+- Explainable AI
+
+### Deep Learning
+
+- Neural Networks
+- CNNs
+- Transfer Learning
+- Fine-Tuning
+- Computer Vision
+- Natural Language Processing
+- Word Embeddings
+- Grad-CAM
+
+### Generative AI
+
+- Transformer Embeddings
+- Semantic Search
+- Vector Databases
+- FAISS
+- Retrieval-Augmented Generation
+- Prompt Engineering
+- Agentic AI
+- Tool Calling
+- Conversation Memory
+- Code Understanding
+- Vision-Language Models
+- Visual Question Answering
+
+---
+
+# 📖 Documentation
+
+Every project includes its own comprehensive **README** covering:
+
+- Project Overview
+- Business Problem
+- Architecture Diagrams
+- AI Concepts
+- Dataset Information
+- Training Pipeline
+- Evaluation
+- Generated Outputs
+- Technologies Used
+- Learning Outcomes
+- Future Improvements
+
+For implementation details, architecture explanations, and results, please refer to the documentation inside each project directory.
+
+---
+
+# 🌟 About This Portfolio
+
+This repository is intended as an **open-source educational portfolio** documenting my journey through modern AI Engineering.
+
+The projects prioritize learning, software architecture, and practical implementation over benchmark performance. Many repositories are designed as reusable prototypes and modular frameworks that can serve as foundations for future production systems.
 
 ---
 
 # 🎯 Current Focus
 
-I build production-oriented AI systems that combine software engineering with modern Machine Learning and Deep Learning techniques.
+I enjoy building intelligent software that combines modern AI techniques with clean software engineering principles.
 
-My work focuses on designing reusable AI frameworks, intelligent automation tools, explainable models, and end-to-end solutions for structured data, computer vision, and natural language processing.
+Current areas of interest include:
+
+- Generative AI
+- AI Agents
+- Retrieval-Augmented Generation (RAG)
+- Computer Vision
+- Large Language Models
+- Developer AI Tools
+- Production AI Systems
+
+---
+
+# 📄 License
+
+Unless stated otherwise, all projects in this portfolio are open source and intended for educational purposes, experimentation, and learning.
