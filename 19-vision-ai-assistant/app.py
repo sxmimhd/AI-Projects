@@ -1,19 +1,23 @@
 from rich.console import Console
 from rich.panel import Panel
 
-from src.prompting.prompt_builder import PromptBuilder, PromptType
+from src.prompting.prompt_builder import PromptType
+from src.vision.vision_assistant import VisionAssistant
 
 console = Console()
 
-prompt = PromptBuilder.build(
+assistant = VisionAssistant()
+
+response = assistant.analyze(
+    image_path="images/natural/beach.jpg",
     prompt_type=PromptType.SCENE,
-    user_question="What is happening in this image?"
+    question="Describe this image in detail.",
 )
 
 console.print(
     Panel(
-        prompt,
-        title="Generated Prompt",
+        response.answer,
+        title=f"{response.model} ({response.inference_time}s)",
         border_style="green",
     )
 )

@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import tempfile
 from PIL import Image
 from src.utils.types import ImagePath
 
@@ -62,3 +62,15 @@ class ImagePreprocessor:
             )
 
         return processed
+
+    @staticmethod
+    def create_temp_image(image: Image.Image) -> Path:
+
+        temp = tempfile.NamedTemporaryFile(
+            suffix=".png",
+            delete=False,
+        )
+
+        image.save(temp.name)
+
+        return Path(temp.name)
