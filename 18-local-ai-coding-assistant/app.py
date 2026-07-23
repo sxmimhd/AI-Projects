@@ -200,55 +200,43 @@ console.print(
 )
 
 retriever = Retriever(store)
-query = "How does repository scanning work?"
 
-results = retriever.retrieve(query)
 
-console.rule("[bold cyan]Retriever[/bold cyan]")
-
-console.print(f"Query : {query}\n")
-
-for chunk, score in results:
-
-    title = chunk.name
-
-    if chunk.parent_class:
-
-        title = f"{chunk.parent_class}.{chunk.name}"
-
-    console.print(
-        f"[green]{title}[/green]"
-    )
-
-    console.print(
-        f"Type : {chunk.chunk_type}"
-    )
-
-    console.print(
-        f"Distance : {score:.4f}"
-    )
-
-    console.print(
-        f"File : {chunk.file_path}"
-    )
-
-    console.print("-" * 60)
-
+retriever = Retriever(store)
 builder = PromptBuilder()
-
-prompt = builder.build(
-    question=query,
-    chunks=[chunk for chunk, _ in results],
-)
-
-console.rule("[bold green]Prompt[/bold green]")
-
-console.print(prompt[:2500])
-
 client = LLMClient()
 
-answer = client.generate(prompt)
+while True:
 
-console.rule("[bold green]Assistant[/bold green]")
+    query = console.input("\n[cyan]You > [/cyan]")
 
-console.print(answer)
+    if query.lower() in {"exit", "quit"}:
+        break
+
+    results = retriever.retrieve(query)
+
+    console.rule("[bold cyan]Retriever[/bold cyan]")
+
+    for chunk, score in results:
+
+        title = chunk.name
+
+        if chunk.parent_class:
+            title = f"{chunk.parent_class}.{chunk.name}"
+
+        console.print(f"[green]{title}[/green]")
+        console.print(f"Type : {chunk.chunk_type}")
+        console.print(f"Distance : {score:.4f}")
+        console.print(f"File : {chunk.file_path}")
+        console.print("-" * 60)
+
+    prompt = builder.build(
+        question=query,
+        chunks=[chunk for chunk, _ in results],
+    )
+
+    console.rule("[bold green]Assistant[/bold green]")
+
+    answer = client.generate(prompt)
+
+    console.print(answer)
