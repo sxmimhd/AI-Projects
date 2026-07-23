@@ -457,44 +457,6 @@ metadata.pkl
 
 ---
 
-## Reports
-
-Repository statistics
-
-Chunk statistics
-
-Embedding statistics
-
-Retrieval examples
-
-Generated answers
-
----
-
-## Figures
-
-Repository overview
-
-Project tree
-
-Repository statistics
-
-Chunk distribution
-
-Function length distribution
-
-Class distribution
-
-Embedding PCA
-
-Embedding t-SNE
-
-Similarity heatmap
-
-Repository dependency graph
-
----
-
 # 🛠️ Technologies
 
 - Python
